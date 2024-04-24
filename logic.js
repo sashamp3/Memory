@@ -1,8 +1,8 @@
 const cards = document.querySelectorAll(".card");
 
-let matched = 0;
+let matched = 0; // буде використовуватися для відстеження кількості пар карт, які були знайдені.
 let cardOne, cardTwo;
-let disableDeck = false;
+let disableDeck = false; //вказує, чи може гравець обирати нові карти. Поки вона дорівнює false, гравець може обирати карти.
 
 function flipCard({target: clickedCard}) {
     if(cardOne !== clickedCard && !disableDeck) {
@@ -53,7 +53,7 @@ function shuffleCard() {
     cards.forEach((card, i) => {
         card.classList.remove("flip");
         let imgTag = card.querySelector(".back-view img");
-        imgTag.src = `.idea/pictures/${arr[i]}.jpg`;
+        imgTag.src = `pictures/${arr[i]}.jpg`;
         card.addEventListener("click", flipCard);
     });
 }
